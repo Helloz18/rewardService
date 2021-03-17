@@ -91,8 +91,8 @@ public class RewardsService {
 	 * modifier private en public
 	 * @return
 	 */
-	public boolean nearAttraction(VisitedLocation visitedLocation, Attraction attraction) {
-		return getDistance(attraction, visitedLocation.location) > proximityBuffer ? false : true;
+	public boolean nearAttraction(VisitedLocation visitedLocation, Attraction attraction, int proxi) {
+		return getDistance(attraction, visitedLocation.location) > proxi ? false : true;
 	}
 	
 	/**
@@ -131,5 +131,10 @@ public class RewardsService {
         double statuteMiles = STATUTE_MILES_PER_NAUTICAL_MILE * nauticalMiles;
         return statuteMiles;
 	}
+	
+//	public List<UserReward> getUserRewards(UUID userId) {
+//		return user.getUserRewards();
+//	}
+	
 
 }
